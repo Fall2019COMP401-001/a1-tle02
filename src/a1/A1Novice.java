@@ -29,11 +29,14 @@ public class A1Novice {
 			for (int j = 0; j < itemAmt; j++) {
 				// quant: quantity of the item bought
 				// Read in item information for one item
-				int quant =  scan.nextInt();;
+				double quant =  scan.nextInt();
+				String itemName = scan.next();
 				double price = scan.nextDouble();
 				total += (quant * price);
 			}
-			System.out.println(firstName.charAt(0) + ". " + lastName + ": " + total);
+			
+			System.out.println(firstName.charAt(0) + ". " + lastName + ": " + String.format("%.2f", total));
+			
 		}
 
 
