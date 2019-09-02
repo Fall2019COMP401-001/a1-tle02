@@ -8,22 +8,25 @@ public class A1Adept {
 		
 		Scanner scan = new Scanner(System.in);
 
-		// Your code follows here.
-		
 		// Create arrays to store item name and price information.
+		// count: number of total potential items
 		int count = scan.nextInt();
+
+		// Make arrays to store info on the list of items and their prices.
 		String[] itemList = new String[count];
 		double[] priceList = new double[count];
 		
-		// Read values into the arrays.
+		// Put values into the arrays.
 		for (int i = 0; i < count; i++) {
 			itemList[i] = scan.next();
 			priceList[i] = scan.nextDouble();
 		}
 		
 		// Read in count of customers to process.
+		// cust: amount of customers 
 		int cust = scan.nextInt();
 		String[] custNames = new String[cust];
+		// custTotals: total amount of money one customer spends
 		double[] custTotals = new double[cust];
 		
 		// Make a loop so the scanner gets information from
@@ -39,12 +42,12 @@ public class A1Adept {
 		
 			double total = 0;
 			
-			// Read through what items a customer has.
+			// Read through what items a customer has, and how much of it.
 			for (int j = 0; j < itemAmt; j++) {
 				double quant = scan.nextDouble();
 				String itemName = scan.next();
 				
-				// Read each of customer's items to find total.
+				// Read each of customer's items to find total cost.
 				for (int k = 0; k < count; k++) {
 					if (itemName.equals(itemList[k])) {
 						total += (quant * priceList[k]);
@@ -58,8 +61,11 @@ public class A1Adept {
 
 			
 		}
-		// Looping through the totals to find the smallest spender
-		// Declaring variables to store the current customer's information
+		
+		scan.close();
+		
+		// Loop through the totals to find the smallest spender
+		// Declare variables to store the current customer's information
 		double currentMin = custTotals[0];
 		String currentCust1 = custNames[0]; 
 		
@@ -74,8 +80,8 @@ public class A1Adept {
 		String small =  String.format("%.2f", currentMin);
 		String smallCust = currentCust1;
 
-		// Looping through the totals to find the biggest spender
-		// Declaring variables to store the current customer's information
+		// Loop through the totals to find the biggest spender
+		// Declare variables to store the current customer's information
 		double currentMax = custTotals[0];
 		String currentCust2 = custNames[0]; 
 		
@@ -90,7 +96,7 @@ public class A1Adept {
 		String big =  String.format("%.2f", currentMax);
 		String bigCust = currentCust2;
 		
-		// Going through the totals to calculate the average
+		// Go through each customer's total to calculate the average
 		double total = 0;
 		
 		for(int i = 0; i < custTotals.length; i++) {
@@ -106,4 +112,5 @@ public class A1Adept {
 	}
 	
 
+	
 }
