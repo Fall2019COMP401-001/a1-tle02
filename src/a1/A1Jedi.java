@@ -16,7 +16,7 @@ public class A1Jedi {
 		String[] itemList = new String[count];
 		int[] custAmt = new int[count];
 		int[] itemQuant = new int[count];
-		
+
 		// Read items into an array.
 		for (int i = 0; i < count; i++) {
 			itemList[i] = scan.next();
@@ -39,23 +39,26 @@ public class A1Jedi {
 
 			
 			// Read through each item that a customer has.
+			int[] groceryList = new int[count];
+			
 			for (int j = 0; j < itemAmt; j++) {
 				double quant = scan.nextDouble();
 				String itemName = scan.next();
-				String[] groceryList = new String[itemAmt];
+				// String[] groceryList = new String[itemAmt];
 				
 				// Read each of customer's items.
 				// Put information into array, to see how many customers have
 				// bought each item, and the total amount of said item is bought.
-				int l = 0;
+				
+				
 				for (int k = 0; k < count; k++) {
 					
 					if (itemName.equals(itemList[k])) {
 						itemQuant[k]+= quant;	
-						l++;
-						if (l == 1) {
+						if (groceryList[k] == 0) {
 							custAmt[k]++;	
 						}
+						groceryList[k]++;
 					} 
 						
 				}
